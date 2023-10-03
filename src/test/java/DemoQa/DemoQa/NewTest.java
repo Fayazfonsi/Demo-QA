@@ -57,16 +57,29 @@ public class NewTest {
 		
 		driver.findElement(By.xpath("(//span)[21]")).click();
 		
-		driver.switchTo().frame(6);
-		System.out.println(driver.findElement(By.cssSelector("#frame1")).getText());
-		//driver.findElement(By.cssSelector("#frame1")).getText();
 		
 		Thread.sleep(3000);
-		driver.switchTo().frame(10);
-		Thread.sleep(4000);
 		
+		//method 1
+		//driver.switchTo().frame("frame1").switchTo().frame(0);
+		//we are use id in frame field
 		
+		//mthod 2
+		//patent frame
+		driver.switchTo().frame(4);
+		Thread.sleep(2000);
 		
+		//child frame
+		driver.switchTo().frame(0);
+		//to come back from this frame we have to use default content twice cause we are using two frames(one is parent and another one is child fame.
+		//default content example: driver.switchTo().defaultContent();
+		
+		Thread.sleep(1000);
+		String Cname= driver.findElement(By.tagName("p")).getText();
+		Assert.assertEquals(driver.findElement(By.tagName("p")).getText(), "Child Iframe");
+		System.out.println(Cname);
+		Thread.sleep(3000);
+		driver.close();
 		
 		
 		
