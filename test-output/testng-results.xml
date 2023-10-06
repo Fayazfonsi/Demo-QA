@@ -1,33 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-03T12:24:40 IST" name="Default suite" finished-at="2023-10-03T12:25:25 IST" duration-ms="45326">
+  <suite started-at="2023-10-06T16:48:05 IST" name="Default suite" finished-at="2023-10-06T16:48:52 IST" duration-ms="46705">
     <groups>
     </groups>
-    <test started-at="2023-10-03T12:24:40 IST" name="Default test" finished-at="2023-10-03T12:25:25 IST" duration-ms="45326">
-      <class name="DemoQa.DemoQa.NewTest">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:DemoQa.DemoQa.NewTest@1de76cc7]" started-at="2023-10-03T12:24:21 IST" name="beforeSuite" finished-at="2023-10-03T12:24:40 IST" duration-ms="18173" status="PASS">
+    <test started-at="2023-10-06T16:48:05 IST" name="Default test" finished-at="2023-10-06T16:48:52 IST" duration-ms="46705">
+      <class name="DemoQa.DemoQa.Widgets">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:DemoQa.DemoQa.Widgets@485966cc]" started-at="2023-10-06T16:47:56 IST" name="beforeSuite" finished-at="2023-10-06T16:48:05 IST" duration-ms="9493" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method signature="elements()[pri:0, instance:DemoQa.DemoQa.NewTest@1de76cc7]" started-at="2023-10-03T12:24:40 IST" name="elements" finished-at="2023-10-03T12:25:10 IST" duration-ms="30249" status="PASS">
+        <test-method signature="elements()[pri:0, instance:DemoQa.DemoQa.Widgets@485966cc]" started-at="2023-10-06T16:48:05 IST" name="elements" finished-at="2023-10-06T16:48:27 IST" duration-ms="22091" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- elements -->
-        <test-method signature="alertFramesandWindows()[pri:1, instance:DemoQa.DemoQa.NewTest@1de76cc7]" started-at="2023-10-03T12:25:10 IST" name="alertFramesandWindows" finished-at="2023-10-03T12:25:15 IST" duration-ms="5189" status="PASS">
+        <test-method signature="widgets2()[pri:1, instance:DemoQa.DemoQa.Widgets@485966cc]" started-at="2023-10-06T16:48:27 IST" name="widgets2" finished-at="2023-10-06T16:48:52 IST" duration-ms="24569" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- alertFramesandWindows -->
-        <test-method signature="frames()[pri:2, instance:DemoQa.DemoQa.NewTest@1de76cc7]" started-at="2023-10-03T12:25:15 IST" name="frames" finished-at="2023-10-03T12:25:25 IST" duration-ms="9804" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- frames -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:DemoQa.DemoQa.NewTest@1de76cc7]" started-at="2023-10-03T12:25:25 IST" name="afterSuite" finished-at="2023-10-03T12:25:25 IST" duration-ms="135" status="PASS">
+        </test-method> <!-- widgets2 -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:DemoQa.DemoQa.Widgets@485966cc]" started-at="2023-10-06T16:48:52 IST" name="afterSuite" finished-at="2023-10-06T16:48:52 IST" duration-ms="252" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- DemoQa.DemoQa.NewTest -->
+      </class> <!-- DemoQa.DemoQa.Widgets -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

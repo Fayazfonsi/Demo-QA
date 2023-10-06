@@ -28,61 +28,40 @@ public class NewTest {
 	public void elements() throws InterruptedException {
 		Thread.sleep(15000);
 		driver.findElement(By.xpath("(//div)[21]")).click();
-		Thread.sleep(15000L);
-		// driver.findElement(By.xpath("(//div)[21]")).click();
-		// Thread.sleep(3000);
+		Thread.sleep(7000L);
 
 	}
 
 	@Test(priority = 1)
-	public void alertFramesandWindows() throws InterruptedException {
-
-		driver.findElement(By.xpath("(//span)[17]")).click();
+	public void widgets2() throws InterruptedException, AWTException {
 
 		js = (JavascriptExecutor) driver;
-		js.executeScript("javascript:window.scrollBy(250,350)");
-		
+		js.executeScript("javascript:window.scrollBy(350,250)");
+
 		Thread.sleep(2000);
-		
-		js = (JavascriptExecutor) driver;
-		js.executeScript("javascript:window.scrollBy(250,350)");
-		
-		
+
+		driver.findElement(By.xpath("(//span)[24]")).click();
 		Thread.sleep(3000);
 
-	}
-
-	@Test(priority = 2)
-	public void frames() throws InterruptedException, AWTException {
-		
-		driver.findElement(By.xpath("(//span)[21]")).click();
-		
-		
-		Thread.sleep(3000);
-		
-		//method 1
-		//driver.switchTo().frame("frame1").switchTo().frame(0);
-		//we are use id in frame field
-		
-		//mthod 2
-		//patent frame
-		driver.switchTo().frame(4);
+		driver.findElement(By.xpath("(//span)[25]")).click();
 		Thread.sleep(2000);
-		
-		//child frame
-		driver.switchTo().frame(0);
-		//to come back from this frame we have to use default content twice cause we are using two frames(one is parent and another one is child fame.
-		//default content example: driver.switchTo().defaultContent();
-		
-		Thread.sleep(1000);
-		String Cname= driver.findElement(By.tagName("p")).getText();
-		Assert.assertEquals(driver.findElement(By.tagName("p")).getText(), "Child Iframe");
-		System.out.println(Cname);
+
+		driver.findElement(By.xpath("//div[@class='card']//div[@id='section1Heading']")).click();
 		Thread.sleep(3000);
-		driver.close();
-		
-		
-		
+
+		driver.findElement(By.xpath("//div[@class='accordion']//div[@id='section2Heading']")).click();
+		Thread.sleep(3000);
+
+		driver.findElement(By.xpath("//div[@class='card']//div[@id='section2Heading']")).click();
+		Thread.sleep(3000);
+
+		driver.findElement(By.xpath("//div[@id='accordianContainer']//div[@id='section3Heading']")).click();
+		Thread.sleep(3000);
+
+		driver.findElement(By.xpath("//div[@class='card']//div[@id='section3Heading']")).click();
+
+		Thread.sleep(5000);
+
 	}
 
 	@BeforeSuite
