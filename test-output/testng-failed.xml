@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="DemoQa.DemoQa.Widgets">
+      <class name="DemoQa.DemoQa.NewTest">
         <methods>
-          <include name="afterSuite"/>
-          <include name="widgets2"/>
+          <include name="elements"/>
           <include name="beforeSuite"/>
+          <include name="widgets2"/>
+          <include name="afterSuite"/>
         </methods>
-      </class> <!-- DemoQa.DemoQa.Widgets -->
+      </class> <!-- DemoQa.DemoQa.NewTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
