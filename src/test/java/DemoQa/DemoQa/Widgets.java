@@ -6,6 +6,7 @@ import org.testng.annotations.BeforeSuite;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -26,7 +27,7 @@ public class Widgets {
 		Thread.sleep(7000L);
 
 	}
-
+	
 	@Test(priority = 1)
 	public void widgets2() throws InterruptedException, AWTException {
 
@@ -37,6 +38,13 @@ public class Widgets {
 
 		driver.findElement(By.xpath("(//span)[24]")).click();
 		Thread.sleep(3000);
+	}
+	
+
+	@Test(priority = 2)
+	public void Accordian() throws InterruptedException, AWTException {
+
+
 
 		driver.findElement(By.xpath("(//span)[25]")).click();
 		Thread.sleep(2000);
@@ -56,6 +64,95 @@ public class Widgets {
 		driver.findElement(By.xpath("//div[@class='card']//div[@id='section3Heading']")).click();
 
 		Thread.sleep(5000);
+
+	}
+	
+	@Test(priority = 3)
+	public void autoComplete() throws InterruptedException, AWTException {
+
+		js = (JavascriptExecutor) driver;
+		js.executeScript("javascript:window.scrollBy(350,250)");
+
+		Thread.sleep(2000);
+
+
+		js= (JavascriptExecutor) driver;
+		js.executeScript("javascript:window.scrollBy(350,250)");
+		
+		driver.findElement(By.xpath("(//span)[26]")).click();
+		
+		driver.findElement(By.xpath("(//input)[1]")).click();
+		
+		Thread.sleep(2000);
+		
+		Robot r = new Robot();
+		
+		r.keyPress(KeyEvent.VK_R);
+		r.keyRelease(KeyEvent.VK_R);
+		
+		r.keyPress(KeyEvent.VK_E);
+		r.keyRelease(KeyEvent.VK_E);
+		
+		r.keyPress(KeyEvent.VK_D);
+		r.keyRelease(KeyEvent.VK_D);
+		
+		Thread.sleep(3000);
+		
+		r.keyPress(KeyEvent.VK_ENTER);
+		r.keyRelease(KeyEvent.VK_ENTER);
+		
+		Thread.sleep(3000);
+		
+		r.keyPress(KeyEvent.VK_Y);
+		r.keyRelease(KeyEvent.VK_Y);
+		
+		r.keyPress(KeyEvent.VK_E);
+		r.keyRelease(KeyEvent.VK_E);
+		
+		r.keyPress(KeyEvent.VK_L);
+		r.keyRelease(KeyEvent.VK_L);
+		
+		Thread.sleep(3000);
+		
+		r.keyPress(KeyEvent.VK_ENTER);
+		r.keyRelease(KeyEvent.VK_ENTER);
+		
+		r.keyPress(KeyEvent.VK_G);
+		r.keyRelease(KeyEvent.VK_G);
+		
+		r.keyPress(KeyEvent.VK_R);
+		r.keyRelease(KeyEvent.VK_R);
+		
+		r.keyPress(KeyEvent.VK_E);
+		r.keyRelease(KeyEvent.VK_E);
+		
+		Thread.sleep(3000);
+		
+		r.keyPress(KeyEvent.VK_ENTER);
+		r.keyRelease(KeyEvent.VK_ENTER);
+		
+		
+		Thread.sleep(3000);
+		
+		driver.findElement(By.xpath("(//input)[2]")).click();
+		
+		r.keyPress(KeyEvent.VK_B);
+		r.keyRelease(KeyEvent.VK_B);
+		
+		r.keyPress(KeyEvent.VK_L);
+		r.keyRelease(KeyEvent.VK_L);
+		
+		r.keyPress(KeyEvent.VK_A);
+		r.keyRelease(KeyEvent.VK_A);
+		
+		Thread.sleep(3000);
+		
+		
+		r.keyPress(KeyEvent.VK_ENTER);
+		r.keyRelease(KeyEvent.VK_ENTER);
+		
+		
+		
 
 	}
 

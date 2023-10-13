@@ -5,9 +5,8 @@
     <classes>
       <class name="DemoQa.DemoQa.NewTest">
         <methods>
-          <include name="elements"/>
+          <include name="Accordian"/>
           <include name="beforeSuite"/>
-          <include name="widgets2"/>
           <include name="afterSuite"/>
         </methods>
       </class> <!-- DemoQa.DemoQa.NewTest -->
