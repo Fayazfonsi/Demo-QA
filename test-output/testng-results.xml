@@ -2,28 +2,28 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-13T18:40:13 IST" name="Default suite" finished-at="2023-10-13T18:41:07 IST" duration-ms="53319">
+  <suite started-at="2023-10-16T18:34:40 IST" name="Default suite" finished-at="2023-10-16T18:35:12 IST" duration-ms="31994">
     <groups>
     </groups>
-    <test started-at="2023-10-13T18:40:13 IST" name="Default test" finished-at="2023-10-13T18:41:07 IST" duration-ms="53319">
+    <test started-at="2023-10-16T18:34:40 IST" name="Default test" finished-at="2023-10-16T18:35:12 IST" duration-ms="31994">
       <class name="DemoQa.DemoQa.NewTest">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:DemoQa.DemoQa.NewTest@1de76cc7]" started-at="2023-10-13T18:40:06 IST" name="beforeSuite" finished-at="2023-10-13T18:40:13 IST" duration-ms="7658" status="PASS">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:DemoQa.DemoQa.NewTest@1de76cc7]" started-at="2023-10-16T18:34:25 IST" name="beforeSuite" finished-at="2023-10-16T18:34:40 IST" duration-ms="15200" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method signature="elements()[pri:0, instance:DemoQa.DemoQa.NewTest@1de76cc7]" started-at="2023-10-13T18:40:13 IST" name="elements" finished-at="2023-10-13T18:40:35 IST" duration-ms="22104" status="PASS">
+        <test-method signature="elements()[pri:0, instance:DemoQa.DemoQa.NewTest@1de76cc7]" started-at="2023-10-16T18:34:40 IST" name="elements" finished-at="2023-10-16T18:35:02 IST" duration-ms="22122" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- elements -->
-        <test-method signature="widgets2()[pri:1, instance:DemoQa.DemoQa.NewTest@1de76cc7]" started-at="2023-10-13T18:40:35 IST" name="widgets2" finished-at="2023-10-13T18:40:41 IST" duration-ms="5117" status="PASS">
+        <test-method signature="widgets2()[pri:1, instance:DemoQa.DemoQa.NewTest@1de76cc7]" started-at="2023-10-16T18:35:02 IST" name="widgets2" finished-at="2023-10-16T18:35:07 IST" duration-ms="5110" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- widgets2 -->
-        <test-method signature="Accordian()[pri:2, instance:DemoQa.DemoQa.NewTest@1de76cc7]" started-at="2023-10-13T18:40:41 IST" name="Accordian" finished-at="2023-10-13T18:41:07 IST" duration-ms="26004" status="PASS">
+        <test-method signature="slider()[pri:2, instance:DemoQa.DemoQa.NewTest@1de76cc7]" started-at="2023-10-16T18:35:07 IST" name="slider" finished-at="2023-10-16T18:35:12 IST" duration-ms="4702" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Accordian -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:DemoQa.DemoQa.NewTest@1de76cc7]" started-at="2023-10-13T18:41:07 IST" name="afterSuite" finished-at="2023-10-13T18:41:07 IST" duration-ms="316" status="PASS">
+        </test-method> <!-- slider -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:DemoQa.DemoQa.NewTest@1de76cc7]" started-at="2023-10-16T18:35:12 IST" name="afterSuite" finished-at="2023-10-16T18:35:12 IST" duration-ms="382" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

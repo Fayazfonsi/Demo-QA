@@ -19,6 +19,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.devtools.v113.css.model.Value;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterSuite;
 
@@ -33,7 +35,7 @@ public class NewTest {
 		Thread.sleep(7000L);
 
 	}
-	
+
 	@Test(priority = 1)
 	public void widgets2() throws InterruptedException, AWTException {
 
@@ -44,72 +46,47 @@ public class NewTest {
 
 		driver.findElement(By.xpath("(//span)[24]")).click();
 		Thread.sleep(3000);
-		
-		
+
 	}
-	
 
 	@Test(priority = 2)
-	public void Accordian() throws InterruptedException, AWTException {
-		
-		js =(JavascriptExecutor) driver;
-		js.executeScript("javascript:window.scrollBy(350,250)");
-		
-		Thread.sleep(3000);
-		
-		driver.findElement(By.xpath("(//span)[27]")).click();
-		
-		Thread.sleep(3000);
-		
-		driver.findElement(By.cssSelector("#datePickerMonthYearInput")).click();
-		Thread.sleep(3000);
-		
-		
-		WebElement staticDropdown= driver.findElement(By.xpath("(//select)[1]"));
-		
-		Select down = new Select(staticDropdown);
-		down.selectByIndex(7);
-		
-		Thread.sleep(3000);
-		
-		WebElement staticDropdown1= driver.findElement(By.xpath("(//select)[2]"));
-		
-		
-		Select down1 = new Select(staticDropdown1);
-		down1.selectByValue("2023");
-		
+	public void slider() throws InterruptedException, AWTException {
+
+		js = (JavascriptExecutor) driver;
+		js.executeScript("jacascript:window.scrollBy(350,250)");
+
+		js = (JavascriptExecutor) driver;
+		js.executeScript("jacascript:window.scrollBy(350,250)");
+
 		Thread.sleep(2000);
+
+		driver.findElement(By.xpath("(//span)[28]")).click();
+		Thread.sleep(2000);
+
+		WebElement slider = driver.findElement(By.xpath("//*[@id=\"sliderContainer\"]/div[1]/span/input"));
+		Actions a = new Actions(driver);
 		
-		driver.findElement(By.xpath("//div[@role='listbox']//div[@aria-label='Choose Wednesday, August 2nd, 2023']")).click();
-		Thread.sleep(3000);
+		//we should use x value only y value is not needed. if we use y value instead of 0 will make the test fail
+		//method 1
+		//a.dragAndDropBy(slider, 595, 0).perform();
 		
-	    driver.findElement(By.cssSelector("#dateAndTimePickerInput")).click();
-	    
-	    driver.findElement(By.xpath("(//div)[82]")).click();
-	    Thread.sleep(2000);
-	    
-	    driver.findElement(By.xpath("(//div)[86]")).click();
-	    
-	    Thread.sleep(2000);
-	    
-	    driver.findElement(By.xpath("(//div)[84]")).click();
-	    
-	    
-	    
+		//method 2
+		//a.dragAndDropBy(slider, 595, 0).build().perform();
 		
+		//method 3
+		a.dragAndDropBy(slider, 595, 0);
+		a.perform();
 		
-		
-		Thread.sleep(4000);
-		
-		
-		
+		//method 4
+		//a.dragAndDropBy(slider, 595, 0);
+		//a.build().perform();
+
+
+		driver.findElement(By.cssSelector("#sliderValue")).click();
+		System.out.println(driver.findElement(By.cssSelector("#sliderValue")).getAttribute("value"));
 
 	}
-	
-	
 
-	
-	
 	@BeforeSuite
 	public void beforeSuite() {
 
