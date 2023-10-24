@@ -34,7 +34,7 @@ public class NewTest {
 	@Test(priority = 0)
 	public void elements() throws InterruptedException {
 		Thread.sleep(15000);
-		driver.findElement(By.xpath("(//div)[21]")).click();
+		driver.findElement(By.xpath("(//span)[3]")).click();
 		Thread.sleep(7000L);
 
 	}
@@ -45,33 +45,40 @@ public class NewTest {
 		js = (JavascriptExecutor) driver;
 		js.executeScript("javascript:window.scrollBy(350,250)");
 
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 
-		driver.findElement(By.xpath("(//span)[24]")).click();
-		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div[1]/div/div/div[4]/span/div/div[1]/span")).click();
+		Thread.sleep(2000);
 
 	}
 
 	@Test(priority = 2)
-	public void tabs() throws InterruptedException, AWTException {
-
-		js = (JavascriptExecutor) driver;
-		js.executeScript("jacascript:window.scrollBy(350,250)");
+	public void toolTips() throws InterruptedException, AWTException {
 
 		js = (JavascriptExecutor) driver;
 		js.executeScript("jacascript:window.scrollBy(350,250)");
 		
 		js = (JavascriptExecutor) driver;
 		js.executeScript("jacascript:window.scrollBy(350,250)");
-
-		Thread.sleep(2000);
 		
-		driver.findElement(By.xpath("(//li)[21]")).click();
+		js = (JavascriptExecutor) driver;
+		js.executeScript("jacascript:window.scrollBy(350,250)");
 		
-		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//li)[22]")).click();
+		
+		Thread.sleep(3000);
+		
+		Actions a= new Actions(driver);
+		
+		a.moveByOffset(432, 381).build().perform();
+		
+		//press ctrl + f and search "You hovered over the button"
+		//driver.findElement(By.className("tooltio-inner")).getText();
+		System.out.println(driver.findElement(By.className("tooltip-inner")).getText());
+		
+		Assert.assertEquals(driver.findElement(By.className("tooltip-inner")).getText(), "You hovered over the Button");
 		
 		
-
 		
 		}
 

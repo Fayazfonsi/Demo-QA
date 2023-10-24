@@ -5,8 +5,8 @@
     <classes>
       <class name="DemoQa.DemoQa.NewTest">
         <methods>
-          <include name="progressBar"/>
           <include name="beforeSuite"/>
+          <include name="toolTips"/>
           <include name="afterSuite"/>
         </methods>
       </class> <!-- DemoQa.DemoQa.NewTest -->

@@ -280,6 +280,42 @@ public class Widgets {
 		if (progressStatus == true) {
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"resetButton\"]"))).click();
 		}
+		
+		
+	}
+	
+	@Test(priority = 7)
+	public void tabs() throws InterruptedException, AWTException {
+
+		js = (JavascriptExecutor) driver;
+		js.executeScript("jacascript:window.scrollBy(350,250)");
+		
+		js = (JavascriptExecutor) driver;
+		js.executeScript("jacascript:window.scrollBy(350,250)");
+
+		
+		
+		Thread.sleep(2000);
+		
+		driver.findElement(By.xpath("(//li)[21]")).click();
+		
+		Thread.sleep(2000);
+		driver.findElement(By.cssSelector("#demo-tab-origin")).click();
+		
+		String origin = driver.findElement(By.xpath("//*[@id=\"demo-tabpane-origin\"]/p[1]")).getText();
+		origin.contains("Contrary to popular belief, Lorem Ipsum is not simply random text");
+		
+		
+		driver.findElement(By.cssSelector("#demo-tab-use")).click();
+		
+		String use = driver.findElement(By.xpath("//*[@id=\"demo-tabpane-use\"]/p")).getText();
+		use.contains("It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.");
+		
+		driver.findElement(By.cssSelector("#demo-tab-what")).click();
+		
+		String what = driver.findElement(By.xpath("//*[@id=\"demo-tabpane-what\"]/p")).getText();
+		what.contains("Lorem Ipsum is simply dummy text of the printing and typesetting industry.");
+		
 	}
 
 	@BeforeSuite
