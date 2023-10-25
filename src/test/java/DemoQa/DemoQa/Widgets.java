@@ -1,6 +1,9 @@
 package DemoQa.DemoQa;
 
 import org.testng.annotations.Test;
+
+import junit.framework.Assert;
+
 import org.testng.annotations.BeforeSuite;
 
 import java.awt.AWTException;
@@ -280,42 +283,149 @@ public class Widgets {
 		if (progressStatus == true) {
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"resetButton\"]"))).click();
 		}
-		
-		
+
 	}
-	
+
 	@Test(priority = 7)
 	public void tabs() throws InterruptedException, AWTException {
 
 		js = (JavascriptExecutor) driver;
 		js.executeScript("jacascript:window.scrollBy(350,250)");
-		
+
 		js = (JavascriptExecutor) driver;
 		js.executeScript("jacascript:window.scrollBy(350,250)");
 
-		
-		
 		Thread.sleep(2000);
-		
+
 		driver.findElement(By.xpath("(//li)[21]")).click();
-		
+
 		Thread.sleep(2000);
 		driver.findElement(By.cssSelector("#demo-tab-origin")).click();
-		
+
 		String origin = driver.findElement(By.xpath("//*[@id=\"demo-tabpane-origin\"]/p[1]")).getText();
 		origin.contains("Contrary to popular belief, Lorem Ipsum is not simply random text");
-		
-		
+
 		driver.findElement(By.cssSelector("#demo-tab-use")).click();
-		
+
 		String use = driver.findElement(By.xpath("//*[@id=\"demo-tabpane-use\"]/p")).getText();
-		use.contains("It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.");
-		
+		use.contains(
+				"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.");
+
 		driver.findElement(By.cssSelector("#demo-tab-what")).click();
-		
+
 		String what = driver.findElement(By.xpath("//*[@id=\"demo-tabpane-what\"]/p")).getText();
 		what.contains("Lorem Ipsum is simply dummy text of the printing and typesetting industry.");
+
+	}
+
+	@Test(priority = 8)
+	public void toolTips() throws InterruptedException, AWTException {
+
+		js = (JavascriptExecutor) driver;
+		js.executeScript("javascript:window.scrollBy(350,250)");
+
+		js = (JavascriptExecutor) driver;
+		js.executeScript("javascript:window.scrollBy(350,250)");
+
+		js = (JavascriptExecutor) driver;
+		js.executeScript("javascript:window.scrollBy(350,250)");
+
+		driver.findElement(By.xpath("(//li)[22]")).click();
+
+		Thread.sleep(5000);
+
+		Actions a = new Actions(driver);
+
+		a.moveToElement(driver.findElement(By.xpath("//*[@id=\"toolTipButton\"]"))).build().perform();
 		
+		Thread.sleep(4000);
+
+		// press ctrl + f and search "You hovered over the button"
+		// driver.findElement(By.className("tooltio-inner")).getText();
+		// System.out.println(driver.findElement(By.className("tooltip-inner")).getText());
+
+		Assert.assertEquals(driver.findElement(By.className("tooltip-inner")).getText(), "You hovered over the Button");
+
+		Thread.sleep(4000);
+		a.moveToElement(driver.findElement(By.id("toolTipTextField"))).build().perform();
+
+		Thread.sleep(4000);
+
+		Assert.assertEquals(driver.findElement(By.className("tooltip-inner")).getText(),
+				"You hovered over the text field");
+		Thread.sleep(4000);
+
+		js = (JavascriptExecutor) driver;
+		js.executeScript("javascript:window.scrollBy(350,250)");
+
+		Thread.sleep(4000);
+
+		a.moveToElement(driver.findElement(By.xpath("//*[@id=\"texToolTopContainer\"]/a[1]"))).build().perform();
+		Thread.sleep(4000);
+
+		Assert.assertEquals(driver.findElement(By.className("tooltip-inner")).getText(),
+				"You hovered over the Contrary");
+		Thread.sleep(3000);
+
+		a.moveToElement(driver.findElement(By.xpath("//*[@id=\"texToolTopContainer\"]/a[2]"))).build().perform();
+		Thread.sleep(4000);
+
+		Assert.assertEquals(driver.findElement(By.className("tooltip-inner")).getText(),
+				"You hovered over the 1.10.32");
+
+		Thread.sleep(4000);
+
+	}
+
+	@Test(priority = 9)
+	public void menu() throws InterruptedException, AWTException {
+
+		js = (JavascriptExecutor) driver;
+		js.executeScript("javascript:window.scrollBy(350,250)");
+
+		js = (JavascriptExecutor) driver;
+		js.executeScript("javascript:window.scrollBy(350,250)");
+
+		js = (JavascriptExecutor) driver;
+		js.executeScript("javascript:window.scrollBy(350,250)");
+
+		driver.findElement(By.xpath("(//li)[23]")).click();
+
+		Thread.sleep(3000);
+
+		Actions a = new Actions(driver);
+
+		a.moveToElement(driver.findElement(By.xpath("//*[@id=\"nav\"]/li[1]/a"))).build().perform();
+
+		Thread.sleep(3000);
+
+		a.moveToElement(driver.findElement(By.xpath("//*[@id=\"nav\"]/li[2]/a"))).build().perform();
+
+		Thread.sleep(3000);
+
+		a.moveToElement(driver.findElement(By.xpath("//*[@id=\"nav\"]/li[2]/ul/li[1]/a"))).build().perform();
+
+		Thread.sleep(3000);
+
+		a.moveToElement(driver.findElement(By.xpath("//*[@id=\"nav\"]/li[2]/ul/li[2]/a"))).build().perform();
+
+		Thread.sleep(3000);
+
+		a.moveToElement(driver.findElement(By.xpath("//*[@id=\"nav\"]/li[2]/ul/li[3]/a"))).build().perform();
+
+		Thread.sleep(3000);
+
+		a.moveToElement(driver.findElement(By.xpath("//*[@id=\"nav\"]/li[2]/ul/li[3]/ul/li[1]/a"))).build().perform();
+
+		Thread.sleep(3000);
+
+		a.moveToElement(driver.findElement(By.xpath("//*[@id=\"nav\"]/li[2]/ul/li[3]/ul/li[2]/a"))).build().perform();
+
+		Thread.sleep(3000);
+
+		a.moveToElement(driver.findElement(By.xpath("//*[@id=\"nav\"]/li[3]/a"))).build().perform();
+		Thread.sleep(3000);
+
 	}
 
 	@BeforeSuite

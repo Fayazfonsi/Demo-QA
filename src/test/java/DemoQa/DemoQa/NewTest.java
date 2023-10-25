@@ -53,31 +53,24 @@ public class NewTest {
 	}
 
 	@Test(priority = 2)
-	public void toolTips() throws InterruptedException, AWTException {
+	public void menu() throws InterruptedException, AWTException {
 
 		js = (JavascriptExecutor) driver;
-		js.executeScript("jacascript:window.scrollBy(350,250)");
+		js.executeScript("javascript:window.scrollBy(350,250)");
 		
 		js = (JavascriptExecutor) driver;
-		js.executeScript("jacascript:window.scrollBy(350,250)");
+		js.executeScript("javascript:window.scrollBy(350,250)");
 		
 		js = (JavascriptExecutor) driver;
-		js.executeScript("jacascript:window.scrollBy(350,250)");
+		js.executeScript("javascript:window.scrollBy(350,250)");
 		
-		driver.findElement(By.xpath("(//li)[22]")).click();
+		driver.findElement(By.xpath("(//li)[24]")).click();
 		
 		Thread.sleep(3000);
 		
-		Actions a= new Actions(driver);
+		driver.findElement(By.xpath("//*[@id=\"withOptGroup\"]/div/div[1]")).click();
 		
-		a.moveByOffset(432, 381).build().perform();
-		
-		//press ctrl + f and search "You hovered over the button"
-		//driver.findElement(By.className("tooltio-inner")).getText();
-		System.out.println(driver.findElement(By.className("tooltip-inner")).getText());
-		
-		Assert.assertEquals(driver.findElement(By.className("tooltip-inner")).getText(), "You hovered over the Button");
-		
+		Thread.sleep(3000);
 		
 		
 		}
