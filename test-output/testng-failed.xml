@@ -5,18 +5,9 @@
     <classes>
       <class name="DemoQa.DemoQa.Widgets">
         <methods>
-          <include name="autoComplete"/>
           <include name="menu"/>
-          <include name="slider"/>
-          <include name="progressBar"/>
-          <include name="tabs"/>
-          <include name="elements"/>
-          <include name="datePicker"/>
           <include name="afterSuite"/>
-          <include name="Accordian"/>
-          <include name="widgets2"/>
           <include name="beforeSuite"/>
-          <include name="toolTips"/>
         </methods>
       </class> <!-- DemoQa.DemoQa.Widgets -->
     </classes>

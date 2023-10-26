@@ -378,7 +378,7 @@ public class Widgets {
 	}
 
 	@Test(priority = 9)
-	public void menu() throws InterruptedException, AWTException {
+	public void selectMenu() throws InterruptedException, AWTException {
 
 		js = (JavascriptExecutor) driver;
 		js.executeScript("javascript:window.scrollBy(350,250)");
@@ -427,6 +427,109 @@ public class Widgets {
 		Thread.sleep(3000);
 
 	}
+	
+	@Test(priority = 10)
+	public void menu() throws InterruptedException, AWTException {
+
+		js = (JavascriptExecutor) driver;
+		js.executeScript("javascript:window.scrollBy(350,250)");
+		
+		js = (JavascriptExecutor) driver;
+		js.executeScript("javascript:window.scrollBy(350,250)");
+		
+		js = (JavascriptExecutor) driver;
+		js.executeScript("javascript:window.scrollBy(350,250)");
+		
+		driver.findElement(By.xpath("(//li)[24]")).click();
+		
+		Thread.sleep(3000);
+		
+		driver.findElement(By.xpath("//*[@id=\"withOptGroup\"]/div/div[1]")).click();
+		
+		Thread.sleep(2000);
+		
+		Robot r = new Robot();
+		
+		r.keyPress(KeyEvent.VK_A);
+		r.keyRelease(KeyEvent.VK_A);
+		
+		r.keyPress(KeyEvent.VK_SPACE);
+		r.keyRelease(KeyEvent.VK_SPACE);
+		
+		r.keyPress(KeyEvent.VK_R);
+		r.keyRelease(KeyEvent.VK_R);
+		
+		r.keyPress(KeyEvent.VK_ENTER);
+		r.keyRelease(KeyEvent.VK_ENTER);
+		
+		Thread.sleep(3000);
+		
+		driver.findElement(By.xpath("//*[@id=\"selectOne\"]/div/div[1]/div[1]")).click();
+		
+		r.keyPress(KeyEvent.VK_D);
+		r.keyRelease(KeyEvent.VK_D);
+		
+		r.keyPress(KeyEvent.VK_ENTER);
+		r.keyRelease(KeyEvent.VK_ENTER);
+		
+		Thread.sleep(3000);
+		
+		WebElement Staticdropdown= driver.findElement(By.cssSelector("#oldSelectMenu"));
+		
+		Select down = new Select(Staticdropdown);
+		
+		down.selectByIndex(3);
+		
+		Thread.sleep(3000);
+		
+		js = (JavascriptExecutor) driver;
+		js.executeScript("javascript:window.scrollBy(350,250)");
+		
+		driver.findElement(By.xpath("(//div)[102]")).click();
+		
+		Thread.sleep(3000);
+		
+		r.keyPress(KeyEvent.VK_G);
+		r.keyRelease(KeyEvent.VK_G);
+		
+		r.keyPress(KeyEvent.VK_ENTER);
+		r.keyRelease(KeyEvent.VK_ENTER);
+		
+		r.keyPress(KeyEvent.VK_B);
+		r.keyRelease(KeyEvent.VK_B);
+		
+		r.keyPress(KeyEvent.VK_ENTER);
+		r.keyRelease(KeyEvent.VK_ENTER);
+		
+		r.keyPress(KeyEvent.VK_B);
+		r.keyRelease(KeyEvent.VK_B);
+		
+		r.keyPress(KeyEvent.VK_ENTER);
+		r.keyRelease(KeyEvent.VK_ENTER);
+		
+		r.keyPress(KeyEvent.VK_R);
+		r.keyRelease(KeyEvent.VK_R);
+		
+		r.keyPress(KeyEvent.VK_ENTER);
+		r.keyRelease(KeyEvent.VK_ENTER);
+		
+		
+		WebElement staticDropsown1 = driver.findElement(By.cssSelector("#cars"));
+		
+		
+		Select down1=new Select(staticDropsown1);
+		
+		down1.selectByIndex(0);
+		down1.selectByIndex(1);
+		down1.selectByIndex(2);
+		
+		Thread.sleep(3000);	
+		
+		
+		}
+	
+	
+	
 
 	@BeforeSuite
 	public void beforeSuite() {
