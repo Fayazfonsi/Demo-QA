@@ -1,65 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-26T18:42:10 IST" name="Default suite" finished-at="2023-10-26T18:46:34 IST" duration-ms="264672">
+  <suite started-at="2023-10-27T16:37:51 IST" name="Default suite" finished-at="2023-10-27T16:39:41 IST" duration-ms="110661">
     <groups>
     </groups>
-    <test started-at="2023-10-26T18:42:10 IST" name="Default test" finished-at="2023-10-26T18:46:34 IST" duration-ms="264672">
-      <class name="DemoQa.DemoQa.Widgets">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:DemoQa.DemoQa.Widgets@5d0bf09b]" started-at="2023-10-26T18:42:01 IST" name="beforeSuite" finished-at="2023-10-26T18:42:10 IST" duration-ms="9108" status="PASS">
+    <test started-at="2023-10-27T16:37:51 IST" name="Default test" finished-at="2023-10-27T16:39:41 IST" duration-ms="110661">
+      <class name="DemoQa.DemoQa.Interactions">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:DemoQa.DemoQa.Interactions@69e153c5]" started-at="2023-10-27T16:37:20 IST" name="beforeSuite" finished-at="2023-10-27T16:37:51 IST" duration-ms="30124" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method signature="elements()[pri:0, instance:DemoQa.DemoQa.Widgets@5d0bf09b]" started-at="2023-10-26T18:42:10 IST" name="elements" finished-at="2023-10-26T18:42:32 IST" duration-ms="22337" status="PASS">
+        <test-method signature="elements()[pri:0, instance:DemoQa.DemoQa.Interactions@69e153c5]" started-at="2023-10-27T16:37:51 IST" name="elements" finished-at="2023-10-27T16:38:13 IST" duration-ms="22110" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- elements -->
-        <test-method signature="widgets2()[pri:1, instance:DemoQa.DemoQa.Widgets@5d0bf09b]" started-at="2023-10-26T18:42:32 IST" name="widgets2" finished-at="2023-10-26T18:42:37 IST" duration-ms="5150" status="PASS">
+        <test-method signature="interaction()[pri:1, instance:DemoQa.DemoQa.Interactions@69e153c5]" started-at="2023-10-27T16:38:13 IST" name="interaction" finished-at="2023-10-27T16:38:21 IST" duration-ms="8084" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- widgets2 -->
-        <test-method signature="Accordian()[pri:2, instance:DemoQa.DemoQa.Widgets@5d0bf09b]" started-at="2023-10-26T18:42:37 IST" name="Accordian" finished-at="2023-10-26T18:42:58 IST" duration-ms="20334" status="PASS">
+        </test-method> <!-- interaction -->
+        <test-method signature="sortable()[pri:2, instance:DemoQa.DemoQa.Interactions@69e153c5]" started-at="2023-10-27T16:38:21 IST" name="sortable" finished-at="2023-10-27T16:39:25 IST" duration-ms="64455" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Accordian -->
-        <test-method signature="autoComplete()[pri:3, instance:DemoQa.DemoQa.Widgets@5d0bf09b]" started-at="2023-10-26T18:42:58 IST" name="autoComplete" finished-at="2023-10-26T18:43:21 IST" duration-ms="22971" status="PASS">
+        </test-method> <!-- sortable -->
+        <test-method signature="selectable()[pri:3, instance:DemoQa.DemoQa.Interactions@69e153c5]" started-at="2023-10-27T16:39:25 IST" name="selectable" finished-at="2023-10-27T16:39:41 IST" duration-ms="15946" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- autoComplete -->
-        <test-method signature="datePicker()[pri:4, instance:DemoQa.DemoQa.Widgets@5d0bf09b]" started-at="2023-10-26T18:43:21 IST" name="datePicker" finished-at="2023-10-26T18:43:56 IST" duration-ms="35624" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- datePicker -->
-        <test-method signature="slider()[pri:5, instance:DemoQa.DemoQa.Widgets@5d0bf09b]" started-at="2023-10-26T18:43:56 IST" name="slider" finished-at="2023-10-26T18:44:09 IST" duration-ms="12889" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- slider -->
-        <test-method signature="progressBar()[pri:6, instance:DemoQa.DemoQa.Widgets@5d0bf09b]" started-at="2023-10-26T18:44:09 IST" name="progressBar" finished-at="2023-10-26T18:44:56 IST" duration-ms="46984" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- progressBar -->
-        <test-method signature="tabs()[pri:7, instance:DemoQa.DemoQa.Widgets@5d0bf09b]" started-at="2023-10-26T18:44:56 IST" name="tabs" finished-at="2023-10-26T18:45:01 IST" duration-ms="4840" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tabs -->
-        <test-method signature="toolTips()[pri:8, instance:DemoQa.DemoQa.Widgets@5d0bf09b]" started-at="2023-10-26T18:45:01 IST" name="toolTips" finished-at="2023-10-26T18:45:43 IST" duration-ms="41587" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- toolTips -->
-        <test-method signature="selectMenu()[pri:9, instance:DemoQa.DemoQa.Widgets@5d0bf09b]" started-at="2023-10-26T18:45:43 IST" name="selectMenu" finished-at="2023-10-26T18:46:12 IST" duration-ms="29258" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectMenu -->
-        <test-method signature="menu()[pri:10, instance:DemoQa.DemoQa.Widgets@5d0bf09b]" started-at="2023-10-26T18:46:12 IST" name="menu" finished-at="2023-10-26T18:46:34 IST" duration-ms="22500" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- menu -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:DemoQa.DemoQa.Widgets@5d0bf09b]" started-at="2023-10-26T18:46:35 IST" name="afterSuite" finished-at="2023-10-26T18:46:35 IST" duration-ms="504" status="PASS">
+        </test-method> <!-- selectable -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:DemoQa.DemoQa.Interactions@69e153c5]" started-at="2023-10-27T16:39:41 IST" name="afterSuite" finished-at="2023-10-27T16:39:42 IST" duration-ms="245" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- DemoQa.DemoQa.Widgets -->
+      </class> <!-- DemoQa.DemoQa.Interactions -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
