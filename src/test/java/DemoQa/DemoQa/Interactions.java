@@ -178,7 +178,72 @@ public class Interactions {
 		
 		
 		}
+	
+	
+	@Test(priority = 4)
+	public void resizable() throws InterruptedException, AWTException {
 
+		js = (JavascriptExecutor) driver;
+		js.executeScript("javascript:window.scrollBy(350,250)");
+		
+		js = (JavascriptExecutor) driver;
+		js.executeScript("javascript:window.scrollBy(350,250)");
+		
+		
+		driver.findElement(By.xpath("(//li)[27]")).click();
+		
+		Thread.sleep(3000);
+		
+		js = (JavascriptExecutor) driver;
+		js.executeScript("javascript:window.scrollBy(350,250)");
+		
+		Thread.sleep(4000);
+		
+		Actions a= new Actions(driver);
+		
+		
+		
+		
+		a.dragAndDropBy(driver.findElement(By.xpath("//*[@id=\"resizableBoxWithRestriction\"]/span")), 300, 100).perform();
+		
+		Thread.sleep(4000);
+		
+		js = (JavascriptExecutor) driver;
+		js.executeScript("javascript:window.scrollBy(350,250)");
+		Thread.sleep(3000);
+		
+		a.dragAndDropBy(driver.findElement(By.xpath("//*[@id=\"resizable\"]/span")), 300, 100).perform();
+		
+		
+		
+		}
+	
+	@Test(priority = 5)
+	public void drappable() throws InterruptedException, AWTException {
+
+		js = (JavascriptExecutor) driver;
+		js.executeScript("javascript:window.scrollBy(350,250)");
+		
+		js = (JavascriptExecutor) driver;
+		js.executeScript("javascript:window.scrollBy(350,250)");
+		
+		
+		driver.findElement(By.xpath("(//li)[28]")).click();
+		
+		Thread.sleep(5000);
+		
+		Actions a = new Actions(driver);
+		
+		a.dragAndDrop(driver.findElement(By.xpath("//*[@id=\"draggable\"]")), driver.findElement(By.xpath("//*[@id=\"droppable\"]"))).build().perform();
+		
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@id=\"droppableExample-tab-accept\"]")).click();
+		Thread.sleep(2000);
+		a.dragAndDrop(driver.findElement(By.xpath("//*[@id=\"draggable\"]")), driver.findElement(By.xpath("//*[@id=\"droppable\"]"))).build().perform();
+		Thread.sleep(3000);
+		
+		
+		}
 	
 
 	@BeforeSuite

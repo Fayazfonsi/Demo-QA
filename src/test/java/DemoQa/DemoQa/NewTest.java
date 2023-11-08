@@ -53,7 +53,7 @@ public class NewTest {
 	}
 
 	@Test(priority = 2)
-	public void sortable() throws InterruptedException, AWTException {
+	public void resizable() throws InterruptedException, AWTException {
 
 		js = (JavascriptExecutor) driver;
 		js.executeScript("javascript:window.scrollBy(350,250)");
@@ -62,32 +62,24 @@ public class NewTest {
 		js.executeScript("javascript:window.scrollBy(350,250)");
 		
 		
-		driver.findElement(By.xpath("(//li)[26]")).click();
-		
-		Thread.sleep(3000);
-		
-		driver.findElement(By.xpath("(//li)[34]")).click();
-		driver.findElement(By.xpath("(//li)[35]")).click();
-		
-		js=(JavascriptExecutor) driver;
-		js.executeScript("javascript.window.scrollBy(350,250)");
-		driver.findElement(By.xpath("(//li)[36]")).click();
-		driver.findElement(By.xpath("(//li)[37]")).click();
-		
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("(//a)[4]")).click();
+		driver.findElement(By.xpath("(//li)[28]")).click();
 		
 		Thread.sleep(5000);
 		
-		driver.findElement(By.xpath("(//li)[38]")).click();
-		driver.findElement(By.xpath("(//li)[39]")).click();
-		driver.findElement(By.xpath("(//li)[40]")).click();
-		driver.findElement(By.xpath("(//li)[41]")).click();
+		Actions a = new Actions(driver);
+		
+		a.dragAndDrop(driver.findElement(By.xpath("//*[@id=\"draggable\"]")), driver.findElement(By.xpath("//*[@id=\"droppable\"]"))).build().perform();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//*[@id=\"droppableExample-tab-accept\"]")).click();
+		Thread.sleep(3000);
+		Actions b = new Actions(driver);
+		//driver.findElement(By.xpath("//div[@xpath='1']////div[@id='acceptable']"));
+		b.dragAndDropBy(driver.findElement(By.xpath("#//div[@xpath='1']////div[@id='acceptable']")), 789, 449).build().perform();
+//		a.dragAndDrop(driver.findElement(By.cssSelector("#acceptable")), driver.findElement(By.xpath("//*[@id=\"droppable\"]"))).build().perform();
+//		Thread.sleep(3000);
+//		a.dragAndDrop(driver.findElement(By.xpath("//*[@id=\"notAcceptable\"]")), driver.findElement(By.xpath("//*[@id=\"droppable\"]"))).build().perform();
 		
 		Thread.sleep(4000);
-		
-		
-		
 		}
 
 	
