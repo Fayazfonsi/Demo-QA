@@ -5,6 +5,8 @@
     <classes>
       <class name="DemoQa.DemoQa.NewTest">
         <methods>
+          <include name="interaction"/>
+          <include name="elements"/>
           <include name="resizable"/>
           <include name="beforeSuite"/>
           <include name="afterSuite"/>

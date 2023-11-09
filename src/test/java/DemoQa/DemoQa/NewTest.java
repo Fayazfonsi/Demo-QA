@@ -71,15 +71,38 @@ public class NewTest {
 		a.dragAndDrop(driver.findElement(By.xpath("//*[@id=\"draggable\"]")), driver.findElement(By.xpath("//*[@id=\"droppable\"]"))).build().perform();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//*[@id=\"droppableExample-tab-accept\"]")).click();
-		Thread.sleep(3000);
-		Actions b = new Actions(driver);
-		//driver.findElement(By.xpath("//div[@xpath='1']////div[@id='acceptable']"));
-		b.dragAndDropBy(driver.findElement(By.xpath("#//div[@xpath='1']////div[@id='acceptable']")), 789, 449).build().perform();
-//		a.dragAndDrop(driver.findElement(By.cssSelector("#acceptable")), driver.findElement(By.xpath("//*[@id=\"droppable\"]"))).build().perform();
-//		Thread.sleep(3000);
-//		a.dragAndDrop(driver.findElement(By.xpath("//*[@id=\"notAcceptable\"]")), driver.findElement(By.xpath("//*[@id=\"droppable\"]"))).build().perform();
+		Thread.sleep(4000);
+		Robot r = new Robot();
+		r.mouseMove(523, 520);
+		r.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+		r.mouseMove(786, 520);
+		r.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
 		
 		Thread.sleep(4000);
+		
+		r.mouseMove(523, 590);
+		r.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+		r.mouseMove(786, 590);
+		r.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+		
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id=\"droppableExample-tab-preventPropogation\"]")).click();
+		Thread.sleep(3000);
+		a.dragAndDrop(driver.findElement(By.xpath("//*[@id=\"dragBox\"]")), driver.findElement(By.xpath("//*[@id=\"notGreedyDropBox\"]/p"))).build().perform();
+		Thread.sleep(3000);
+		a.dragAndDrop(driver.findElement(By.xpath("//*[@id=\"dragBox\"]")), driver.findElement(By.xpath("//*[@id=\"notGreedyInnerDropBox\"]/p"))).build().perform();
+		Thread.sleep(3000);
+		js=(JavascriptExecutor) driver;
+		js.executeScript("javascript:window.scrollBy(350,250)");
+		Thread.sleep(3000);
+		a.dragAndDrop(driver.findElement(By.xpath("//*[@id=\"dragBox\"]")), driver.findElement(By.xpath("//*[@id=\"greedyDropBox\"]/p"))).build().perform();
+		Thread.sleep(3000);
+		a.dragAndDrop(driver.findElement(By.xpath("//*[@id=\"dragBox\"]")), driver.findElement(By.xpath("//*[@id=\"greedyDropBoxInner\"]/p"))).build().perform();
+		Thread.sleep(4000);
+		driver.findElement(By.xpath("//*[@id=\"droppableExample-tab-revertable\"]")).click();
+		Thread.sleep(3000);
+		
+		
 		}
 
 	
@@ -88,7 +111,7 @@ public class NewTest {
 	public void beforeSuite() {
 
 		System.setProperty("webdriver.chrome.driver",
-				"E:\\eclips\\chrome driver\\chromedriver-win64\\chromedriver.exe");
+				"E:\\eclips\\chromedriver-win64\\chromedriver.exe");
 
 		driver = new ChromeDriver();
 		driver.get("https://demoqa.com/elements");
